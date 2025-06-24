@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東京美食搜尋 (MVP)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>東京美食搜尋</h1>
+
+        <div class="search-inputs">
+            <div class="input-group">
+                <label for="location">景點：</label>
+                <input type="text" id="location" placeholder="例如：淺草、澀谷">
+            </div>
+            <div class="input-group">
+                <label for="category">美食類別：</label>
+                <input type="text" id="category" placeholder="例如：拉麵、壽司">
+            </div>
+            <div class="input-group">
+                <label for="price">價位區間：</label>
+                <input type="text" id="price" placeholder="例如：便宜、中等、昂貴">
+            </div>
+            <button id="searchButton">搜尋</button>
+        </div>
+
+        <div id="searchResults" class="search-results">
+            <p class="placeholder-text">輸入條件後點擊搜尋，即可找到東京美食！</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
