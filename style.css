@@ -1,74 +1,90 @@
+/* style.css */
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Noto Sans CJK TC', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 增加中文字體支援 */
     margin: 0;
     padding: 20px;
-    background-color: #f4f7f6;
+    background-color: #eef2f5; /* 輕柔的背景色 */
     color: #333;
+    line-height: 1.6;
 }
 
 .container {
-    max-width: 900px;
-    margin: 30px auto;
+    max-width: 960px; /* 稍微放寬最大寬度 */
+    margin: 40px auto; /* 增加上下邊距 */
     background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px; /* 增加內距 */
+    border-radius: 12px; /* 更圓潤的邊角 */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* 更明顯的陰影效果 */
 }
 
 h1 {
     text-align: center;
-    color: #0056b3;
-    margin-bottom: 30px;
+    color: #2c3e50; /* 深藍灰色，更穩重 */
+    margin-bottom: 35px;
+    font-size: 2.5em; /* 讓標題更大 */
+    font-weight: 700;
 }
 
 .search-inputs {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 30px;
+    flex-wrap: wrap; /* 允許換行 */
+    gap: 20px; /* 增加間距 */
+    margin-bottom: 40px;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-end; /* 對齊底部 */
 }
 
 .input-group {
-    flex: 1 1 200px; /* 彈性佈局，最小寬度200px */
+    flex: 1 1 250px; /* 調整彈性基礎寬度，讓每個輸入組佔更多空間 */
     display: flex;
     flex-direction: column;
 }
 
 .input-group label {
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 8px; /* 增加標籤與輸入框的間距 */
+    font-weight: 600; /* 更粗的字體 */
     color: #555;
+    font-size: 0.95em;
 }
 
 .input-group input[type="text"] {
-    padding: 10px 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 12px 15px; /* 增加內距 */
+    border: 1px solid #cdd4da; /* 更柔和的邊框顏色 */
+    border-radius: 8px; /* 更圓潤的邊角 */
     font-size: 16px;
-    width: 100%; /* 確保輸入框佔滿父容器 */
-    box-sizing: border-box; /* 邊框和內距不增加寬度 */
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input[type="text"]:focus {
+    border-color: #3498db; /* 聚焦時邊框變色 */
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2); /* 聚焦時增加陰影 */
+    outline: none; /* 移除預設外框 */
 }
 
 button {
-    padding: 12px 25px;
-    background-color: #007bff;
+    padding: 12px 30px; /* 增加按鈕內距 */
+    background-color: #3498db; /* 清新的藍色 */
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 8px; /* 更圓潤的按鈕邊角 */
+    font-size: 18px; /* 更大的字體 */
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 120px; /* 確保按鈕有最小寬度 */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #2980b9; /* 滑鼠懸停時顏色變深 */
+    transform: translateY(-2px); /* 輕微上浮效果 */
 }
 
 .search-results {
-    border-top: 1px solid #eee;
-    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 30px;
 }
 
 .placeholder-text {
@@ -78,44 +94,132 @@ button:hover {
     padding: 30px;
 }
 
+/* style.css (在現有 .search-results 下方新增或修改) */
+
 .restaurant-card {
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease;
+    background-color: #ffffff; /* 卡片背景改為白色，與容器區分 */
+    border: 1px solid #e7ebee; /* 更淺的邊框顏色 */
+    border-radius: 10px; /* 更圓潤的邊角 */
+    padding: 25px; /* 增加內距 */
+    margin-bottom: 20px; /* 增加卡片間距 */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* 更明顯的陰影 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden; /* 防止內容溢出 */
 }
 
 .restaurant-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px); /* 滑鼠懸停時上浮更多 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* 懸停時陰影更深 */
 }
 
 .restaurant-card h3 {
-    color: #333;
+    color: #2c3e50; /* 店名顏色與主標題一致 */
     margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 22px;
+    margin-bottom: 12px;
+    font-size: 24px; /* 店名更大 */
+    font-weight: 700;
+    border-bottom: 2px solid #ecf0f1; /* 底部加一條細線 */
+    padding-bottom: 10px;
 }
 
 .restaurant-card p {
-    margin: 5px 0;
-    line-height: 1.6;
+    margin: 8px 0; /* 調整段落間距 */
+    line-height: 1.8; /* 增加行高，提升閱讀性 */
+    font-size: 15px;
 }
 
 .restaurant-card p strong {
-    color: #555;
+    color: #4a69bd; /* 強調文字使用藍色 */
+    font-weight: 600;
 }
 
 .restaurant-card .google-map-link {
-    display: inline-block;
+    display: inline-flex; /* 讓圖標和文字在同一行 */
+    align-items: center;
+    gap: 5px; /* 連結文字與圖標的間距 */
     margin-top: 10px;
-    color: #007bff;
+    color: #3498db; /* 與按鈕顏色一致 */
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.3s ease;
 }
 
 .restaurant-card .google-map-link:hover {
+    color: #2980b9; /* 滑鼠懸停時顏色變深 */
     text-decoration: underline;
+}
+
+/* 可以為地圖連結加一個小圖標，如果有的話 */
+/* .google-map-link::before {
+    content: '📍';
+    font-size: 1.1em;
+} */
+/* style.css (新增在檔案最下方) */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 25px; /* 平板及手機內距調整 */
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .search-inputs {
+        flex-direction: column; /* 在小螢幕上垂直堆疊 */
+        align-items: stretch; /* 讓元素拉伸填滿寬度 */
+        gap: 15px;
+    }
+
+    .input-group {
+        width: 100%; /* 確保輸入框佔滿寬度 */
+    }
+
+    button {
+        width: 100%; /* 按鈕也佔滿寬度 */
+        font-size: 17px;
+        padding: 15px;
+    }
+
+    .restaurant-card {
+        padding: 20px;
+    }
+
+    .restaurant-card h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px;
+        margin: 15px auto;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    .input-group input[type="text"],
+    button {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .restaurant-card {
+        padding: 15px;
+        margin-bottom: 12px;
+    }
+
+    .restaurant-card h3 {
+        font-size: 18px;
+    }
 }
